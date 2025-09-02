@@ -39,11 +39,17 @@ export default {
   data() {
     return {
       user: "",
-      posts: [],
+      // posts: [],
       state: {
         uid: "",
       },
     };
+  },
+  computed: {
+    // 계산 된 속성, data에 주석처리된 posts를 대신함
+    posts() {
+      return this.$store.getters.getBoardList;
+    },
   },
   methods: {
     addPost(payload) {
@@ -73,6 +79,8 @@ export default {
 
           this.user = { id: email, name: nickname };
           this.state.uid = nickname || "로그인유저";
+
+          this.$store.commit("setId", email);
         },
         fail: (error) => {
           console.log(error);
@@ -84,6 +92,9 @@ export default {
     return {
       state: this.state,
     };
+  },
+  mounted() {
+    console.log(this.$store.state.boardList);
   },
 };
 </script>

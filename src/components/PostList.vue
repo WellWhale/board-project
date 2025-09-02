@@ -1,3 +1,5 @@
+<!--0901메모장-->
+
 <template>
   <h3>{{ msg }}</h3>
   <p v-if="posts.length == 0">첫 게시글을 작성해주세요.</p>

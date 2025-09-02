@@ -1,3 +1,5 @@
+<!--0901메모장-->
+
 <template>
   <h3>{{ msg }}</h3>
 
@@ -29,13 +31,26 @@ export default {
       content: "",
     };
   },
+  computed: {
+    boardNo() {
+      return this.$store.getters.getBoardNo;
+    },
+    logId() {
+      return this.$store.getters.getLogId;
+    },
+  },
   methods: {
     handleSubmit() {
       let post = {
+        id: this.boardNo,
         title: this.title,
         content: this.content,
+        date: new Date().toLocaleDateString(),
+        writer: this.logId,
       };
-      this.$emit("add-post", post);
+      // this.$emit("add-post", post);
+      // this.$store.commit("addBoard", post); // mutations
+      this.$store.dispatch("saveBoard", post); // actions
 
       // 입력했던 필드들을 초기화
       this.title = "";

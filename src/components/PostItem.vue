@@ -1,3 +1,5 @@
+<!--0901메모장-->
+
 <template>
   <div class="post-item">
     <h3>{{ post.title }}</h3>
@@ -6,7 +8,7 @@
       <small>작성일: {{ post.date }}</small>
     </p>
     <p>
-      <small>작성자: {{ state.uid }}</small>
+      <small>작성자: {{ post.writer }}</small>
     </p>
   </div>
 </template>
