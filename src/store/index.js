@@ -78,3 +78,53 @@ export default createStore({
 //   },
 // });
 
+//
+//
+//
+//
+//
+
+// <template>
+//   <div class="container">
+//     <h1 class="h1">상품 목록</h1>
+//     <hr />
+//     <table class="table table-hover">
+//       <thead>
+//         <tr>
+//           <th>상품번호</th>
+//           <th>상품이름</th>
+//           <th>상품가격</th>
+//           <th>배송료</th>
+//           <th>카테고리</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         <tr
+//           v-on:click="goDetail(list.id)"
+//           v-bind:key="list.id"
+//           v-for="list in productList"
+//           style="cursor: pointer"
+//         >
+//           <td>{{ list.id }}</td>
+//           <td>{{ list.product_name }}</td>
+//           <td>{{ list.product_price }}</td>
+//           <td>{{ list.delivery_price }}</td>
+//           <td>{{ list.tags }}</td>
+//         </tr>
+//       </tbody>
+//     </table>
+//   </div>
+// </template>
+
+// <script>
+// export default {
+//   computed: {
+//     productList() {
+//       return this.$store.getters.productList;
+//     },
+//   },
+//   mounted() {
+//     this.$store.dispatch("fetchProductList");
+//   },
+// };
+// </script>
