@@ -42,3 +42,13 @@ export default createStore({
     },
   },
 });
+
+  // actions: {
+  //   async fetchProductList({ commit }) {
+  //     await axios("/api/productList") // ← 여기서 서버로 "가져온다"
+  //       .then((result) => {
+  //         // console.log(result.data);
+  //         commit("SET_PRODUCTS", result.data); // ← 가져온 걸 state에 "저장해라" (뮤테이션 실행)
+  //       });
+  //   },
+  // },
